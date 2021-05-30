@@ -8,7 +8,7 @@ char *item[]={"Engine","Chassis","Electric Supply"};
 sem_t table;
 void *agent(void *arg)
 {
-// agent thread function that has infinite number of ingredians
+// agent thread function that has infinite number of materials
 int i,j,k=0;
 int count=0;
 while(1)
@@ -65,8 +65,8 @@ printf("Manufacturer0 has Engine\n");
 printf("Manufacturer1 has Chasis\n");
 printf("Manufacturer2 has Electric Supply\n");
 pthread_create(&agnt,0,agent,0);
-pthread_create(&smoker0,0,smokeri,(void*)0);
-pthread_create(&smoker1,0,smokeri,(void*)1);
-pthread_create(&smoker2,0,smokeri,(void*)2);
+pthread_create(&manufacturer0,0,manufacturer,(void*)0);
+pthread_create(&manufacturer1,0,manufacturer,(void*)1);
+pthread_create(&manufacturer2,0,manufacturer,(void*)2);
 while(1);
 }
